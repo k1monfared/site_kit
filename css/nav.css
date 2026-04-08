@@ -1,0 +1,38 @@
+/* site_kit/css/nav.css
+   Nav button and icon styling. */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+nav button, nav .nav-icon {
+  background: none;
+  border: none;
+  width: var(--nav-button-size, 34px);
+  height: var(--nav-button-size, 34px);
+  padding: 0;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: var(--nav-button-radius, 6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+nav button:hover, nav .nav-icon:hover {
+  background: var(--border);
+}
+
+#theme-toggle {
+  font-size: 1.25rem;
+  line-height: 1;
+  background: var(--toggle-bg);
+  color: var(--toggle-text);
+}
+
+#theme-toggle:hover {
+  opacity: 0.8;
+}

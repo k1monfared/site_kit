@@ -1,0 +1,53 @@
+/* site_kit/css/post-nav.css
+   Post navigation (prev/next) styling. */
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.post-nav a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  max-width: 45%;
+  transition: color 0.15s;
+}
+
+.post-nav a:hover {
+  color: var(--link);
+}
+
+.post-nav a:hover .post-nav-title {
+  color: var(--link);
+}
+
+.post-nav-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.post-nav-title {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-nav-prev {
+  align-items: flex-start;
+}
+
+.post-nav-next {
+  align-items: flex-end;
+  margin-left: auto;
+}

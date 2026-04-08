@@ -3,14 +3,7 @@
    Runs IIFE immediately at parse time to prevent flash. */
 (function () {
   var saved = localStorage.getItem('theme');
-  var theme;
-  if (saved) {
-    theme = saved;
-  } else if (matchMedia('(prefers-color-scheme: light)').matches) {
-    theme = 'light';
-  } else {
-    theme = 'dark';
-  }
+  var theme = saved || 'dark';
   document.documentElement.setAttribute('data-theme', theme);
 
   function updateIcon(btn, current) {
@@ -34,12 +27,4 @@
     });
   });
 
-  /* Respond to OS-level preference changes when no saved preference exists */
-  matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
-    if (localStorage.getItem('theme')) return;
-    theme = e.matches ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', theme);
-    var btn = document.getElementById('theme-toggle');
-    if (btn) updateIcon(btn, theme);
-  });
 })();

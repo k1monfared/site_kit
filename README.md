@@ -155,6 +155,20 @@ All icons are 18x18, use `currentColor` for fill/stroke, and share a stroke-widt
 
 ## CSS Variable Overrides
 
+### Table opt-in classes
+
+`base.css` renders tables with native HTML defaults — cells wrap naturally, column widths honor CSS / `<col>` rules. If you need the old narrow-viewport behavior (table scrolls horizontally, rows stay on one line), opt in explicitly:
+
+```html
+<table class="scroll-table">
+  …
+</table>
+```
+
+That re-applies the pre-2026 behavior (`display: block; overflow-x: auto` on the table, `white-space: nowrap` on every cell).
+
+## CSS Variable Overrides
+
 Override any variable on your site by redefining it in your own stylesheet after importing base.css:
 
 ```css

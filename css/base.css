@@ -197,14 +197,17 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Tables */
+/* Tables
+   Default: native HTML table rendering. Cells wrap naturally, column widths
+   honor table-layout / <col> rules, and consumers are free to constrain
+   columns or wrap the table in a horizontal-scroll container where needed.
+   If you want the legacy narrow-viewport behavior (table scrolls horizontally,
+   rows stay on one line), add class="scroll-table" to the table.  */
 table {
   border-collapse: collapse;
   width: 100%;
   margin: 1em 0;
   font-size: 0.95em;
-  display: block;
-  overflow-x: auto;
 }
 
 thead {
@@ -215,11 +218,20 @@ th, td {
   padding: 0.5em 0.75em;
   border: 1px solid var(--border);
   text-align: left;
-  white-space: nowrap;
 }
 
 th {
   font-weight: 600;
+}
+
+/* Opt-in: horizontally-scrolling table with non-wrapping rows. Preserves the
+   pre-2026 site_kit default for sites that were relying on it. */
+table.scroll-table {
+  display: block;
+  overflow-x: auto;
+}
+table.scroll-table th, table.scroll-table td {
+  white-space: nowrap;
 }
 
 /* Horizontal rule */

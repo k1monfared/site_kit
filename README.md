@@ -41,7 +41,7 @@ Include only the components you need. The base CSS is required for variables and
 
 ### Icons
 
-Reference SVG files in `icons/` for tags, timeline, rss, lock-closed, and lock-open. These are also available inline via `js/icons.js`.
+Reference SVG files in `icons/` for tags, timeline, rss, lock-closed, lock-open, sidebar-open, sidebar-close, menu, and x. These are also available inline via `js/icons.js`. The `grid` and `feed` icons are defined in `icons.js` only.
 
 ## HTML Contracts
 
@@ -143,7 +143,15 @@ No special HTML beyond a list container with items. Items beyond the page size s
 <span data-icon="lock-open"></span>
 <span data-icon="grid"></span>
 <span data-icon="feed"></span>
+<span data-icon="sidebar-open"></span>
+<span data-icon="sidebar-close"></span>
+<span data-icon="menu"></span>
+<span data-icon="x"></span>
 ```
+
+All icons are 18x18, use `currentColor` for fill/stroke, and share a stroke-width of 2 with rounded caps and joins for visual consistency.
+
+**For client-rendered apps (React, Vue, etc.):** `icons.js` exposes `window.siteKitRenderIcons(root)` so you can call it after your framework has mounted new DOM. Elements are marked with `data-icon-rendered` after replacement, so subsequent calls are idempotent.
 
 ## CSS Variable Overrides
 

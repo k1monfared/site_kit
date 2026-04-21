@@ -153,9 +153,7 @@ All icons are 18x18, use `currentColor` for fill/stroke, and share a stroke-widt
 
 **For client-rendered apps (React, Vue, etc.):** `icons.js` exposes `window.siteKitRenderIcons(root)` so you can call it after your framework has mounted new DOM. Elements are marked with `data-icon-rendered` after replacement, so subsequent calls are idempotent.
 
-## CSS Variable Overrides
-
-### Table opt-in classes
+## Table Opt-In Classes
 
 `base.css` renders tables with native HTML defaults — cells wrap naturally, column widths honor CSS / `<col>` rules. If you need the old narrow-viewport behavior (table scrolls horizontally, rows stay on one line), opt in explicitly:
 

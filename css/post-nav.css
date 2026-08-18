@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  max-width: 45%;
+  max-width: 40%;
   transition: color 0.15s;
 }
 
@@ -50,12 +50,4 @@
 .post-nav-next {
   align-items: flex-end;
   margin-left: auto;
-}
-
-/* Small screens: keep prev/next titles from overlapping.
-   Each link stays within its own 40% of the viewport. */
-@media (max-width: 768px) {
-  .post-nav a {
-    max-width: 40%;
-  }
 }

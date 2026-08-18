@@ -51,3 +51,11 @@
   align-items: flex-end;
   margin-left: auto;
 }
+
+/* Small screens: keep prev/next titles from overlapping.
+   Each link stays within its own 40% of the viewport. */
+@media (max-width: 768px) {
+  .post-nav a {
+    max-width: 40%;
+  }
+}
